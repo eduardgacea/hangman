@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+    <script async defer src="index.js"></script>
+  </head>
+  <body>
+    <audio id="caw" src="assets/caw.mp3"></audio>
+    <audio id="background-music" src="assets/background.mp3" loop></audio>
+    <audio id="typewritter" src="assets/typewritter.mp3"></audio>
+    <div id="root">
+      <div id="modal" class="modal-elem hidden-modal-el">
+        <div id="modal-title" class="modal-elem hidden-modal-el">Congratulations!</div>
+        <div id="modal-content" class="modal-elem hidden-modal-el">You guessed the word with 3 lives remaining</div>
+        <button id="modal-btn" class="modal-elem hidden-modal-el">CLOSE</button>
+      </div>
+      <div id="backdrop" class="modal-elem hidden-modal-el"></div>
+      <form id="game-params-form">
+        <input id="lives-picker" class="input" type="number" min="3" max="7" value="3" />
+        <input id="length-picker" class="input" type="number" min="4" max="14" value="4" />
+        <button id="fetch-btn" class="btn" type="submit">FETCH WORD</button>
+        <button id="play-btn" class="btn" type="button">🎵</button>
+      </form>
+      <div id="word-hook"></div>
+      <div id="alphabet-hook"></div>
+    </div>
+  </body>
+</html>

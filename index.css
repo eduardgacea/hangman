@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Almendra', serif;
+}
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  justify-content: space-around;
+  background-color: rgb(20, 15, 13);
+}
+
+#game-params-form {
+  display: flex;
+  gap: 10px;
+}
+
+.input {
+  outline: none;
+  padding: 0px 8px;
+  font-size: 24px;
+  width: 60px;
+  border-radius: 2px;
+  border: none;
+  box-shadow: inset 0 0 0 2px rgb(167, 26, 26);
+  background-color: transparent;
+  color: rgb(167, 26, 26);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.btn {
+  border-radius: 2px;
+  background-color: transparent;
+  border: none;
+  box-shadow: inset 0 0 0 2px rgb(167, 26, 26);
+  color: rgb(167, 26, 26);
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.35s;
+  font-weight: 700;
+}
+
+.btn:hover {
+  background-color: rgb(167, 26, 26);
+  color: rgb(20, 15, 13);
+}
+
+#word-container {
+  display: inline-flex;
+  gap: 30px;
+  font-size: 72px;
+  font-weight: 700;
+  user-select: none;
+}
+
+.letter,
+.alphabet-letter {
+  text-transform: uppercase;
+  position: relative;
+}
+
+#lives-display {
+  display: flex;
+}
+
+.life-icon {
+  width: 48px;
+}
+
+.letter {
+  width: 60px;
+  text-align: center;
+  color: rgb(167, 26, 26);
+}
+
+#alphabet-container {
+  margin-top: 40px;
+  display: inline-grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+}
+
+.alphabet-letter {
+  width: 80px;
+  height: 80px;
+  font-size: 40px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  align-self: center;
+  border: none;
+  background-color: transparent;
+  transition: all 0.75s;
+  color: rgb(167, 26, 26);
+}
+
+.alphabet-letter::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background-image: url('assets/border.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.alphabet-letter:hover {
+  text-shadow: 2px 2px 4px rgb(121, 68, 68);
+}
+
+.alphabet-letter:active {
+  opacity: 0.75;
+}
+
+.inactive {
+  scale: 0;
+  opacity: 0;
+}
+
+.hidden-modal-el {
+  padding: 0 !important;
+  display: none;
+}
+
+#modal,
+#backdrop {
+  position: absolute;
+}
+
+#modal-title,
+#modal-content {
+  grid-column: 1/4;
+}
+
+#modal-btn {
+  grid-column: 2/3;
+}
+
+#backdrop {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+#modal {
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(167, 26, 26);
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 40px;
+  text-align: center;
+  z-index: 20;
+}
+
+#modal-title {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+#modal-content {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+#modal-btn {
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px black;
+  cursor: pointer;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+#modal-btn:hover {
+  background-color: black;
+  color: rgb(167, 26, 26);
+}
